@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
+    "@tsconfig/svelte": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "svelte": "^4.0.0",
+    "svelte-preprocess": "^5.0.4",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "svelte-spa-router": "^4.0.1"
+  }
+}
