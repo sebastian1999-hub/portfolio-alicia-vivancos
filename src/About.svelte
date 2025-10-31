@@ -17,7 +17,7 @@
           <div class="relative group w-full max-w-xs">
             <div class="absolute inset-0 bg-gradient-to-br from-blue-400/40 via-indigo-400/40 to-sky-400/40 rounded-xl backdrop-blur-sm transition-all duration-500 group-hover:backdrop-blur-md"></div>
             <img 
-              src="/images/IMG_7990.jpg" 
+              src={`${import.meta.env.BASE_URL}images/IMG_7990.jpg`} 
               alt="Alicia Vivancos" 
               class="w-full h-[320px] object-cover rounded-xl relative"
             />

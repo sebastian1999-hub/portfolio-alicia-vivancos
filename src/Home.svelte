@@ -1,11 +1,11 @@
 <script lang="ts">
   const images = [
-    'src/assets/carrousel/001 inicio.JPEG',
-    'src/assets/carrousel/001 portada (1).jpg',
-    'src/assets/carrousel/001 portadajpeg.jpeg',
-    'src/assets/carrousel/01 (3).jpg',
-    'src/assets/carrousel/04 (1).jpg',
-    'src/assets/carrousel/09 (1).JPG'
+    new URL('./assets/carrousel/001 inicio.JPEG', import.meta.url).href,
+    new URL('./assets/carrousel/001 portada (1).jpg', import.meta.url).href,
+    new URL('./assets/carrousel/001 portadajpeg.jpeg', import.meta.url).href,
+    new URL('./assets/carrousel/01 (3).jpg', import.meta.url).href,
+    new URL('./assets/carrousel/04 (1).jpg', import.meta.url).href,
+    new URL('./assets/carrousel/09 (1).JPG', import.meta.url).href
   ];
 </script>
 
