@@ -63,7 +63,7 @@
   <Header />
   <div class="w-full px-2 py-6 relative z-10">
     <div class="rounded-2xl">
-  <Router {routes} useHash={true} />
+        <Router {routes} />
     </div>
   </div>
   <Footer />
