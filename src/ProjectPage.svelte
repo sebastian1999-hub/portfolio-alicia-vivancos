@@ -1,7 +1,7 @@
 <script lang="ts">
   import ProjectDetail from './lib/components/ProjectDetail.svelte';
   import { projects } from './projectsData';
-  export let params = {};
+  export let params: { id?: string } = {};
 
   let project = projects.find(p => p.id === params.id);
 </script>

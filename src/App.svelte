@@ -29,7 +29,7 @@
   }
 </style>
 
-<main class="min-h-screen bg-gradient-to-br from-blue-50 via-sky-100 to-indigo-100 text-gray-900 pb-32 relative overflow-hidden">
+<main class="min-h-screen bg-gradient-to-br from-blue-50 via-sky-100 to-indigo-100 text-gray-900 pb-12 relative overflow-x-hidden">
   <div class="absolute inset-0 pointer-events-none z-0">
     <!-- Formas de fuego decorativas -->
     <svg class="absolute bottom-0 left-0 w-96 h-96 opacity-20 flame" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -60,11 +60,10 @@
     </svg>
   </div>
   
+  
   <Header />
-  <div class="w-full px-2 py-6 relative z-10">
-    <div class="rounded-2xl">
-        <Router {routes} />
-    </div>
+  <div class="w-full relative z-10">
+    <Router {routes} />
   </div>
   <Footer />
 </main>

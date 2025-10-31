@@ -7,8 +7,8 @@
   }
 </script>
 
-<header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50">
-  <div class="container mx-auto px-4 py-6">
+<header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
+  <div class="px-4 py-3">
     <!-- Versión desktop -->
     <div class="hidden md:flex items-center justify-between">
       <nav class="flex-1">
@@ -27,7 +27,7 @@
       </nav>
       
       <a href="/" 
-        class="text-2xl font-serif text-blue-700" 
+        class="text-xl font-serif text-blue-700" 
         on:click|preventDefault={() => push('/')}>
         Alicia Vivancos Solano
       </a>
@@ -104,11 +104,5 @@
   </div>
 </header>
 
-<!-- Espaciador para compensar el header fixed -->
-<div class="h-24"></div>
-
 <style>
-  header {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-  }
 </style>
