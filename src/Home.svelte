@@ -2,6 +2,8 @@
   import { onMount } from 'svelte';
   import { projects } from './projectsData';
   import { push } from 'svelte-spa-router';
+  import { fade } from 'svelte/transition';
+  import { cubicOut } from 'svelte/easing';
 
   // Usamos los proyectos como slides del carrusel
   const slides = projects;
@@ -66,13 +68,16 @@
 >
   <div class="relative w-full h-full bg-neutral-900" on:touchstart={onTouchStart} on:touchend={onTouchEnd}>
     {#if slides && slides.length}
-      <!-- Imagen actual -->
-      <img
-        src={slides[index].image}
-        alt={slides[index].title}
-        class="absolute inset-0 w-full h-full object-cover select-none"
-        draggable="false"
-      />
+      <!-- Imagen actual con transición de desvanecimiento -->
+      {#key index}
+        <img
+          src={slides[index].image}
+          alt={slides[index].title}
+          class="absolute inset-0 w-full h-full object-cover select-none"
+          draggable="false"
+          transition:fade={{ duration: 450, easing: cubicOut }}
+        />
+      {/key}
 
       <!-- Degradados para legibilidad -->
       <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/70 to-transparent pointer-events-none"></div>
@@ -100,15 +105,7 @@
         </svg>
       </button>
 
-      <!-- Indicadores (puntos) -->
-      <div class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2">
-        {#each slides as s, i}
-          <button class="w-2.5 h-2.5 rounded-full transition hover:scale-110"
-                  style={`background: ${i === index ? 'white' : 'rgba(255,255,255,0.45)'}; opacity: ${i === index ? 1 : 0.8};`}
-                  on:click={() => (index = i)}
-                  aria-label={`Ir al slide ${i+1}`}></button>
-        {/each}
-      </div>
+      <!-- Indicadores (puntos) removidos -->
 
       <!-- Información inferior: eyebrow + título + descripción + botones -->
       <div class="absolute inset-x-0 bottom-0 p-6">
@@ -126,7 +123,6 @@
           </div>
           <div class="flex gap-3">
             <button class="btn-primary focus-ring" on:click={openDetail}>Ver detalle</button>
-            <button class="btn-outline focus-ring" on:click={() => push('/projects')}>Ver proyectos</button>
           </div>
         </div>
       </div>
