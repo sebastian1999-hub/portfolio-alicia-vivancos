@@ -14,19 +14,21 @@
       <div class="flex flex-col md:flex-row w-full gap-8">
         <!-- Imagen a la izquierda -->
         <div class="w-full md:w-auto flex justify-center md:justify-start">
-          <div class="relative group w-full max-w-xs">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-400/40 via-indigo-400/40 to-sky-400/40 rounded-xl backdrop-blur-sm transition-all duration-500 group-hover:backdrop-blur-md"></div>
-            <img 
-              src={`${import.meta.env.BASE_URL}images/IMG_7990.jpg`} 
-              alt="Alicia Vivancos" 
-              class="w-full h-[320px] object-cover rounded-xl relative"
-            />
+          <div class="w-full max-w-xs">
+            <div class="card overflow-hidden">
+              <img 
+                src={`${import.meta.env.BASE_URL}images/IMG_7990.jpg`} 
+                alt="Alicia Vivancos" 
+                class="w-full h-[320px] object-cover"
+              />
+            </div>
           </div>
         </div>
         
         <!-- Texto sobre mí a la derecha -->
-        <div class="flex-1 bg-gradient-to-br from-blue-50/80 via-sky-50/80 to-indigo-50/80 backdrop-blur-sm p-10 rounded-xl shadow-xl border-2 border-blue-400">
-          <h2 class="text-4xl font-serif font-bold mb-6 text-blue-700">Sobre mí</h2>
+        <div class="flex-1 card p-8">
+          <div class="eyebrow">Perfil</div>
+          <h2 class="section-title mb-4">Sobre mí</h2>
           
           <div class="space-y-5 text-gray-700">
             <p class="text-lg leading-relaxed">
@@ -45,8 +47,9 @@
       </div>
       
       <!-- Especialidades debajo de todo -->
-      <div class="w-full bg-gradient-to-br from-blue-50/80 via-sky-50/80 to-indigo-50/80 backdrop-blur-sm p-10 rounded-xl shadow-xl border-2 border-blue-400">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Especialidades</h3>
+      <div class="w-full card p-8">
+        <div class="eyebrow">Competencias</div>
+        <h3 class="font-serif text-2xl font-semibold text-[color:var(--ink)] mb-4">Especialidades</h3>
         <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
           <li>Diseño y modelado de figuras falleras</li>
           <li>Pintura y acabados artísticos</li>
@@ -59,14 +62,6 @@
 </section>
 
 <style>
-  .backdrop-blur-sm {
-    backdrop-filter: blur(4px);
-  }
-  
-  .backdrop-blur-md {
-    backdrop-filter: blur(8px);
-  }
-
   /* Animación de entrada suave */
   section {
     opacity: 0;

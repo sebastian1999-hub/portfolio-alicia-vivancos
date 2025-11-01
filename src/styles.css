@@ -5,11 +5,21 @@
 @tailwind utilities;
 
 :root {
-  --brand: #0ea5a4;
+  /* Elegant neutral palette */
+  --ink: #1f2937;           /* slate-800 */
+  --ink-2: #374151;         /* slate-700 */
+  --muted: #6b7280;         /* slate-500 */
+  --surface: #faf7f2;       /* warm ivory */
+  --line: #e7e3dd;          /* soft divider */
+  --accent: #c8a97e;        /* warm sand/gold */
+  --accent-700: #a78561;    /* darker accent */
+  --white: #ffffff;
 }
 
 html, body { 
   font-family: 'Lato', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--ink);
+  background: var(--surface);
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -22,3 +32,55 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 }
 
 .container { max-width: 960px; }
+
+/* Design system: components and utilities */
+@layer components {
+  .container-pro {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg text-white font-medium shadow hover:brightness-110 active:translate-y-px transition px-5 py-2.5;
+    background: linear-gradient(135deg, var(--accent), var(--accent-700));
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg border border-white/40 text-white/90 hover:text-white hover:bg-white/10 transition px-4 py-2;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 text-gray-800 hover:bg-gray-50 transition px-5 py-2.5;
+  }
+  .btn-link {
+    @apply inline-flex items-center gap-2 text-[color:var(--ink)] hover:text-[color:var(--accent-700)] underline-offset-4 hover:underline;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full bg-white text-[color:var(--ink-2)] px-3 py-1 text-xs font-semibold border border-[color:var(--line)];
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-sm border border-[color:var(--line)];
+  }
+  .nav-link {
+    @apply relative uppercase tracking-wider text-sm text-[color:var(--ink-2)] hover:text-[color:var(--accent-700)] transition;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-[2px] w-0 transition-all duration-300;
+    background: linear-gradient(90deg, var(--accent), var(--accent-700));
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  }
+
+  /* Section heading pattern */
+  .eyebrow {
+    @apply uppercase tracking-[0.15em] text-xs text-[color:var(--muted)];
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-[color:var(--ink)];
+  }
+  .divider {
+    @apply h-px w-16 bg-[color:var(--line)];
+  }
+}
